@@ -8,7 +8,7 @@ sudo apt install plocate
 
 ### find files
 
-locate <enter-file-name>
+locate enter-file-name
 
 ![image](https://user-images.githubusercontent.com/99254634/208647670-be81bf39-3253-4c16-88bc-7f4ea513dbea.png)
 
