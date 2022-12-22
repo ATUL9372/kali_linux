@@ -14,7 +14,7 @@ unshadow password.txt shadow.txt > final-password.txt
 
 nano password-list.txt
 
-john --wordlist=/tmp/password-list.txt final-password.txt 
+john **--wordlist=/tmp/password-list.txt** final-password.txt 
 
 john --show final-password.txt 
 
