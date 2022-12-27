@@ -1,5 +1,8 @@
 # Linux Password Cracking
 
+* [password crack](https://null-byte.wonderhowto.com/how-to/crack-shadow-hashes-after-getting-root-linux-system-0186386/) -
+Crack Shadow Hashes After Getting Root on a Linux System 
+
 ### Install John
 
         sudo apt install john
