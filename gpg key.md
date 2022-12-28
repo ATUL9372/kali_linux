@@ -4,7 +4,6 @@
 Quick'n easy gpg cheatsheet 
 
 * [GnuPG](https://devhints.io/gnupg) -
-
 GnuPG is a complete and free implementation of the OpenPGP standard.
 
 ### Install gpg for debian
