@@ -24,3 +24,18 @@ allow member of Groups SUDO  to execute
 %username ALL=(ALL:ALL) NOPASSWD:ALL       # no password ask
 
 %username ALL=(ALL:ALL) PASSWD:ALL			# every time password ask 
+
+------------------------------------------------------------------------------------------------------------------
+
+# Create User in Amazon Linux
+
+### create user with home folder
+
+    sudo adduser username
+
+## Create user password
+
+    sudo passwd username
+    
+## Provide sudo permissions
+
