@@ -12,7 +12,7 @@
 
       qpdf --encrypt mypassword mypassword 256 -- input_file.pdf output_file.pdf
       
-# Decrypt 
+# Decrypt PDF files
 
        qpdf --password=Enter_Your_Password --decrypt input.pdf output.pdf
 
