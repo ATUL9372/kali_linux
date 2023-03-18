@@ -4,5 +4,5 @@
 
 apt update && upgrade -y
 
-apt install -y git wget curl systemd nano net-tools htop tar gnupg gawk mawk egrep sed make 
+apt install -y git wget curl systemd nano net-tools htop tar gnupg gawk mawk grep sed make 
 
