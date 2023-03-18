@@ -4,4 +4,4 @@
 
 apt update && upgrade -y
 
-apt install -y git wget curl systemd nano net-tools htop 
+apt install -y git wget curl systemd nano net-tools htop tar 
