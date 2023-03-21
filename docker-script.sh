@@ -4,6 +4,8 @@
 
 apt update && upgrade -y
 
-apt install -y git iproute2 wget curl systemd nano net-tools htop tar gnupg gawk mawk grep sed make  openssh-server  sudo systemctl systemd
+apt install -y git iproute2 wget curl systemd nano net-tools htop tar gnupg gawk mawk grep sed make  openssh-server  sudo 
+
+apt install systemctl systemd
 
 # openssh-client
