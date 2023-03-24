@@ -46,6 +46,14 @@ Encryption time Enter target (other users) imported public key file and enter ke
 
       gpg -d Enter-file-name.gpg
       
+      
+### Check your gpg public key
+
+      gpg --list-key
+
+      gpg --armor --export Enter-Your-UID-Email-Address
+
+      
  
     
       
