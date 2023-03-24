@@ -53,7 +53,7 @@ Encryption time Enter target (other users) imported public key file and enter ke
 
       gpg --armor --export Enter-Your-UID-Email-Address
       
-### Decrypt file using target public key
+### Decrypt file using target public key (Enter target gpg public key)
       gpg --decrypt -
 
       
