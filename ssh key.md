@@ -16,8 +16,11 @@
 ### ssh config file 
 
       Host my-website.com
-          HostName my-website.com
+          HostName 192.168.11.11
           User my-user
           IdentityFile ~/.ssh/id_rsa
 
+### connect remote server usig ssh config file commands
+
+      ssh my-website.com
 
