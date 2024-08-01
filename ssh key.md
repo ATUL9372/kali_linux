@@ -13,3 +13,11 @@
       sudo systemctl status sshd.service
 
 
+### ssh config file 
+
+      Host my-website.com
+          HostName my-website.com
+          User my-user
+          IdentityFile ~/.ssh/id_rsa
+
+
