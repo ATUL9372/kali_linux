@@ -15,7 +15,7 @@
 
       sudo systemctl status sshd.service
 
-### ssh-copy-id send your ssh publick key on remote server
+### ssh-copy-id send your ssh Public key 🔑 on remote server
 
       ssh-copy-id -i xyz.pub <Username>@<remote-server-ip>
       
