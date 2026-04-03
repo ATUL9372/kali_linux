@@ -28,17 +28,22 @@ pm2 save
 pm2 startup
 ```
 
-✅ 7. Re-save (important after startup)
+✅ 7. After run pm2 startup command run below command start with sudo env PATH=xxxxx something
+```bash
+sudo env PATH=$PATH:/home/xxxx/.nvm/xxx/xxx/xxx/xxx/xxxx/xxxx/
+```
+
+✅ 8. Re-save (important after startup)
 ```bash
 pm2 save
 ```
 
-✅ 8. Reboot server 
+✅ 9. Reboot server 
 ```bash
 sudo reboot
 ```
 
-✅ 9. Test pm2 working
+✅ 10. Test pm2 working
 ```bash
 pm2 list
 ```
