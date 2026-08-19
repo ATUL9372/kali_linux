@@ -161,3 +161,8 @@ ping 10.0.0.1
 # Test tunnel connectivity from Server 2 to Server 1
 ping 10.0.0.2
 ```
+
+
+## Diagram
+<img width="1536" height="1024" alt="wireguard" src="https://github.com/user-attachments/assets/311756bf-95a4-4c05-89c3-e42a28444bea" />
+
