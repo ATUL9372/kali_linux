@@ -6,8 +6,8 @@ Complete step-by-step setup guide for configuring a secure WireGuard VPN tunnel 
 
 | Role | Hostname | Public IP | Private Tunnel IP | WireGuard Port |
 |---|---|---|---|---|
-| Server 1 (ubuntu)soc | ubuntu@<HostName> | 1.1x.xx.44 | 10.0.0.2/24 | Dynamic |
-| Server 2 (kali)   | kali@<HostName>   | 2.x6.68.xx | 10.0.0.1/24 | 51820 (UDP) |
+| Server 1 (ubuntu)soc | ubuntu@HostName | 1.1x.xx.44 | 10.0.0.1/24 | Dynamic |
+| Server 2 (kali)   | kali@HostName   | 2.x6.68.xx | 10.0.0.2/24 | 51820 (UDP) |
 
 ---
 
