@@ -164,4 +164,4 @@ ping 10.0.0.2
 
 
 ## Diagram
-![image]()
+![image](https://github.com/ATUL9372/kali_linux/blob/cb62d574de3609aae4c8043ce5914b659647cb63/wireguard.png)
