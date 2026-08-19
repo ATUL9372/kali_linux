@@ -1,17 +1,17 @@
 # WireGuard Tunnel Setup Guide
 
-Complete step-by-step setup guide for configuring a secure WireGuard VPN tunnel between the Server 1(ubuntu) and the Server 2(kali).
+Complete step-by-step setup guide for configuring a secure WireGuard VPN tunnel between the Server 1(ubuntu) is main server soc and the Server 2(kali).
 
 ## Network Overview
 
 | Role | Hostname | Public IP | Private Tunnel IP | WireGuard Port |
 |---|---|---|---|---|
-| Server 1 (ubuntu) | ubuntu@<HostName> | 1.1x.xx.44 | 10.0.0.2/24 | Dynamic |
+| Server 1 (ubuntu)soc | ubuntu@<HostName> | 1.1x.xx.44 | 10.0.0.2/24 | Dynamic |
 | Server 2 (kali)   | kali@<HostName>   | 2.x6.68.xx | 10.0.0.1/24 | 51820 (UDP) |
 
 ---
 
-## Part A: Setup on Server 2 (kali)
+## Part A: Setup on Server 1 (ubuntu)
 
 ### 1. Install WireGuard
 
@@ -44,20 +44,20 @@ Paste the following content:
 
 ```ini
 [Interface]
-# Private IP address assigned to Server 2(kali) inside the WireGuard tunnel
+# Private IP address assigned to Server 1(ubuntu) inside the WireGuard tunnel
 Address = 10.0.0.1/24
 # The UDP port WireGuard will listen on for incoming client connections
 ListenPort = 51820
-# Private Key of Server 2(kali)
-PrivateKey = <PASTE_SERVER2(kali)_PRIVATE_KEY_HERE>
+# Private Key of Server 1(ubuntu)
+PrivateKey = <PASTE_SERVER1(ubuntu)_PRIVATE_KEY_HERE>
 
 # ==========================================
-# Peer Section: Server 1(ubuntu) (Agent Node)
+# Peer Section: Server 2(kali) (Agent)
 # ==========================================
 [Peer]
-# Public Key of Server 1(ubuntu) (generated on Server 1)
-PublicKey = <PASTE_SERVER1(ubuntu)_PUBLIC_KEY_HERE>
-# Allowed internal IP address range for Server 1 (ubuntu)inside the VPN
+# Public Key of Server 2(ubuntu) (generated on Server 2)
+PublicKey = <PASTE_SERVER2(kali)_PUBLIC_KEY_HERE>
+# Allowed internal IP address range for Server 2 (kali)inside the VPN
 AllowedIPs = 10.0.0.2/32
 ```
 
@@ -73,16 +73,20 @@ sudo wg-quick up wg0
 
 # Enable automatic start on system boot
 sudo systemctl enable wg-quick@wg0
+
+sudo wg
+ip a
 ```
 
 ---
 
-## Part B: Setup on Server 1(ubuntu)
+## Part B: Setup on Server 2(kali)
 
 ### 1. Install WireGuard
 
 ```bash
 sudo apt update && sudo apt install -y wireguard
+sudo su
 cd /etc/wireguard/
 ```
 
@@ -111,18 +115,18 @@ Paste the following content:
 [Interface]
 # Private IP address assigned to Server 1(ubuntu) inside the WireGuard tunnel
 Address = 10.0.0.2/24
-# Private Key of Server 1(ubuntu)
-PrivateKey = <PASTE_SERVER1_PRIVATE_KEY_HERE>
+# Private Key of Server 2(kali) agent
+PrivateKey = <PASTE_SERVER2(kali)_PRIVATE_KEY_HERE>
 
 # ==========================================
-# Peer Section: Server 2(kali)
+# Peer Section: Server 1(ubuntu)
 # ==========================================
 [Peer]
-# Public Key of Server 2 (generated on Server kali)
-PublicKey = <PASTE_SERVER2(kali)_PUBLIC_KEY_HERE>
-# Public Endpoint address and listening port of Server 2(kali)
-Endpoint = 22.56.68.59:51820
-# Allowed IP routing range for Server 2(kali) inside the VPN
+# Public Key of Server 1 (generated on Server ubuntu)
+PublicKey = <PASTE_SERVER1(ubuntu)_PUBLIC_KEY_HERE>
+# Public Endpoint address and listening port of Server 1(ubuntu)  
+Endpoint = 1.1x.xx.44:51820   # enter here server1(ubuntu) public ip address
+# Allowed IP routing range for Server 1(ubuntu) inside the VPN
 AllowedIPs = 10.0.0.1/32
 # Sends keep-alive packets every 25 seconds to keep the tunnel active through NAT/firewalls
 PersistentKeepalive = 25
@@ -136,6 +140,9 @@ sudo wg-quick up wg0
 
 # Enable automatic start on system boot
 sudo systemctl enable wg-quick@wg0
+
+sudo wg
+ip a
 ```
 
 ---
