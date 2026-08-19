@@ -164,5 +164,4 @@ ping 10.0.0.2
 
 
 ## Diagram
-
-![wireguard](https://chatgpt.com/backend-api/estuary/content?id=file_00000000cb3881faa2a4a9cf1a0067a6&ts=496431&p=fs&cid=1&sig=f59e0dd64dcd5920e7e2bc2b5a94642e8c223c03ce5cdf4ff866b64591d9e027&v=0)
+![image]()
