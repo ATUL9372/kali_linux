@@ -161,6 +161,70 @@ ping 10.0.0.1
 # Test tunnel connectivity from Server 2 to Server 1
 ping 10.0.0.2
 ```
+---
+
+# WireGuard VPN Management Commands
+
+Commands for managing, stopping, and restarting the WireGuard service on Linux systemd environments.
+
+---
+
+## 1. Quick Commands
+
+| Action | Command |
+| :--- | :--- |
+| **Restart Service** | `sudo systemctl restart wg-quick@wg0` |
+| **Stop Service** | `sudo systemctl stop wg-quick@wg0` |
+| **Start Service** | `sudo systemctl start wg-quick@wg0` |
+| **Check Status** | `sudo systemctl status wg-quick@wg0` |
+
+---
+
+## 2. Interface Level Commands (`wg-quick`)
+
+If `systemctl` hangs or encounters errors, use `wg-quick` directly:
+
+### Stop Interface
+```bash
+sudo wg-quick down wg0
+```
+
+### Start Interface
+```bash
+sudo wg-quick up wg0
+```
+
+---
+
+## 3. Handling "`wg0 already exists`" Error
+
+When restarting fails because the interface is stuck in an active state:
+
+```bash
+# Force-remove the stuck interface
+sudo ip link delete wg0
+
+# Clean restart via systemd
+sudo systemctl restart wg-quick@wg0
+```
+
+---
+
+## 4. Verification & Diagnostics
+
+### View Active Configuration & Handshakes
+```bash
+sudo wg show
+```
+
+### Check Live Traffic / Logs
+```bash
+sudo journalctl -u wg-quick@wg0 -f
+```
+
+---
+
+**Note:** Replace `wg0` with your specific configuration name if using a different interface file (e.g., `/etc/wireguard/wg1.conf` → `wg1`).
 
 
 ## Diagram
