@@ -80,7 +80,7 @@ ip a
 
 ---
 
-## Part B: Setup on Server 2(kali)
+## Part B: Setup on Server 2(kali) agent
 
 ### 1. Install WireGuard
 
