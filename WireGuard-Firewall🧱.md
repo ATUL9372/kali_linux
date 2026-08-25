@@ -87,21 +87,21 @@ ip a
 ```bash
 sudo apt update && sudo apt install -y wireguard
 sudo su
-cd /etc/wireguard/
 ```
 
 ### 2. Generate Private and Public Keys
 
 ```bash
+cd /etc/wireguard
 umask 077
-sudo wg genkey | sudo tee privatekey | sudo wg pubkey | sudo tee publickey
-
-# View generated keys
-sudo cat privatekey
-sudo cat publickey
+wg genkey | tee privatekey | wg pubkey > publickey
+```
+### 3. Check generate *.key
+```bash
+ls -l privatekey publickey
 ```
 
-### 3. Create Configuration File (`/etc/wireguard/wg0.conf`)
+### 4. Create Configuration File (`/etc/wireguard/wg0.conf`)
 
 Create or edit the file:
 
@@ -132,7 +132,7 @@ AllowedIPs = 10.0.0.1/32
 PersistentKeepalive = 25
 ```
 
-### 4. Start WireGuard Service
+### 5. Start WireGuard Service
 
 ```bash
 # Start the interface
