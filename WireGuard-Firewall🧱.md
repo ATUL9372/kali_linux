@@ -240,6 +240,18 @@ A quick reference guide for managing WireGuard VPN connections using `nmcli` in 
 
 ## Command Reference
 
+### 0. All in one
+Here is how to set up NetworkManager control using the terminal.
+```bash
+sudo wg-quick up wg0
+sudo nmcli connection import type wireguard file /etc/wireguard/wg0.conf
+nmcli connection show
+sudo wg-quick down wg0
+ip a show wg0
+nmcli connection show --active
+```
+
+
 ### 1. Import Configuration
 Import an existing WireGuard configuration file into NetworkManager:
 ```bash
