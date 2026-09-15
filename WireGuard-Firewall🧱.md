@@ -229,3 +229,58 @@ sudo journalctl -u wg-quick@wg0 -f
 
 ## Diagram
 ![image](https://github.com/ATUL9372/kali_linux/blob/cb62d574de3609aae4c8043ce5914b659647cb63/wireguard.png)
+
+# Ubuntu GUI
+
+# NetworkManager WireGuard Commands
+
+A quick reference guide for managing WireGuard VPN connections using `nmcli` in Ubuntu/Linux.
+
+---
+
+## Command Reference
+
+### 1. Import Configuration
+Import an existing WireGuard configuration file into NetworkManager:
+```bash
+sudo nmcli connection import type wireguard file /etc/wireguard/wg0.conf
+```
+
+### 2. Connect / Disconnect VPN
+* **Connect:**
+  ```bash
+  nmcli connection up wg0
+  ```
+* **Disconnect:**
+  ```bash
+  nmcli connection down wg0
+  ```
+
+### 3. Manage Auto-Connect on Boot
+* **Enable auto-connect:**
+  ```bash
+  nmcli connection modify wg0 connection.autoconnect yes
+  ```
+* **Disable auto-connect:**
+  ```bash
+  nmcli connection modify wg0 connection.autoconnect no
+  ```
+
+### 4. Delete Connection
+Remove the WireGuard connection profile from NetworkManager:
+```bash
+nmcli connection delete wg0
+```
+
+---
+
+## Status Verification
+
+* **Check active connections:**
+  ```bash
+  nmcli connection show --active
+  ```
+* **Verify WireGuard status:**
+  ```bash
+  sudo wg show
+  ```
