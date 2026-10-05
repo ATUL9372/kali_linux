@@ -17,6 +17,10 @@ su username
 
 sudo deluser username
 
+## Delete the user and its home directory
+
+sudo deluser --remove-home USERNAME
+
 ### visudo file
 
 allow member of Groups SUDO  to execute
